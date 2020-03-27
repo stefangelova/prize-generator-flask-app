@@ -1,1 +1,14 @@
 <h1>{{ title }}</h1>
+{% block body_content %}
+	<br/>
+	<div class="form">
+		<form method="POST" action="">
+			<div class="form-group">
+				{{ form.submit }}
+			</div>
+		</form>
+	</div>
+	<br/>	
+	<p> <div style="font-size: 50px;">{{ res }}</div> </p>
+
+{% endblock body_content %}

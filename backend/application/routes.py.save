@@ -1,0 +1,20 @@
+import requests
+from application import app
+
+PRIZES = [10000, 1000, 100, 10 , 1]
+
+def get_prize(letters, numbers):
+    letters = [ord(l) for l in letter]
+    numbers = [int(l) for n in number]
+    sum_nums = sum(letters + numbers)
+    index = sum_nums % len(PRIZES)
+    return PRIZES[index]
+
+@app.route('/')
+def numlet():
+    letters = requests.get('http://number:/')
+    numbers = requests.get('http://service    if not(letters.ok or numbers.ok):
+        return {'error': True, 'message': 'Couldn\'t access service1 or service2'}
+    prize = get_prize(list(letters.text), list(numbers.text))
+    return {'error': False, 'result': str(prize)}
+
