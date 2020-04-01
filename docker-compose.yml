@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+  number:
+    image: service1numbers:build-${BUILD_NUMBER}
+    deploy:
+      mode: replicated
+      replicas: 3
+      update_config:
+        parallelism: 1
+        order: start-first
+    container_name: service10numbers
+    build: ./number
+  letter:
+    image: service2letters:build-${BUILD_NUMBER}
+    deploy:
+      mode: replicated
+      replicas: 3
+      update_config:
+        parallelism: 1
+        order: start-first
+    container_name: service20letters
+    build: ./letter
+  backend:
+    image: service3gen:build-${BUILD_NUMBER}
+    deploy:
+      mode: replicated
+      replicas: 3
+      update_config:
+        parallelism: 1
+        order: start-first
+    container_name: service30gen
+    build: ./backend
