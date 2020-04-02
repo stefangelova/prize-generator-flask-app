@@ -9,7 +9,7 @@ services:
     deploy: 
      replicas: 4
    
- service2letters:
+  service2letters:
     image: service2letters:latest
     ports:
     - target: 5001
@@ -26,15 +26,3 @@ services:
       protocol: tcp
     deploy:
      replicas: 4
-    environment:
-    - SECRET_KEY=hello
-    
-  frontend:
-    image: zreginaldoz/frontend:latest
-    ports:
-    - target: 5000
-      published: 5000
-      protocol: tcp
-    deploy:
-     replicas: 4
-    
