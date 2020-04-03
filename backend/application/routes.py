@@ -2,6 +2,7 @@ import requests
 from application import app
 from requests.exceptions import HTTPError
 from flask import jsonify
+import string
 
 PRIZES = [10000, 1000, 100, 10, 1]
 
@@ -28,7 +29,7 @@ def numlet():
         return(f'HTTP error occurred: {http_err}')
     except Exception as err:
         return(f'Other error occurred: {err}')
-    numbers = response1.json()["numbers"]
-    letters = response2.json()["letters"]
-    prize = get_prize(list(numbers.text), list(letters.text))
-    return {'error': False, 'result': str(prize)}
+    numbers = response1.json()
+    letters = response2.json()
+    prize = get_prize(list(numbers), list(letters))
+    return {'Error': False,'Prize': str(prize)}

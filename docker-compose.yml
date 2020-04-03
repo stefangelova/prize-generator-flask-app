@@ -3,8 +3,7 @@ services:
   service1numbers: 
     image: service1numbers:latest
     ports:
-    - target: 5002
-      published: 5002
+      - "5002:5002"
       protocol: tcp
     deploy: 
      replicas: 4
@@ -12,8 +11,7 @@ services:
   service2letters:
     image: service2letters:latest
     ports:
-    - target: 5001
-      published: 5001
+      - "5001:5001"
       protocol: tcp
     deploy:
      replicas: 4
@@ -21,8 +19,21 @@ services:
   service3gen:
     image: service3gen:latest
     ports:
-    - target: 5003
-      published: 5003
+      - "5003:5003"
       protocol: tcp
     deploy:
      replicas: 4
+
+  service4front:
+    image: service4front:latest
+    ports:
+      - "5004:5004"
+      protocol:tcp
+    deploy:
+     replicas: 4
+
+  #servicedb:
+   # images:
+   # ports:
+   #   - "3306:3306"
+
