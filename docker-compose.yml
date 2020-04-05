@@ -1,37 +1,41 @@
 version: '3.7'
 services:
-  number:
-    image: service1numbers:build-${BUILD_NUMBER}
+  service1numbers: 
+    image: service1numbers:latest
+    ports:
+    - target: 5002
+      published: 5002
+      protocol: tcp
+    deploy: 
+     replicas: 4
+   
+  service2letters:
+    image: service2letters:latest
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
     deploy:
-      mode: replicated
-      replicas: 3
-      update_config:
-        parallelism: 1
-        order: start-first
-    container_name: service10numbers
-    build: ./number
-  letter:
-    image: service2letters:build-${BUILD_NUMBER}
+     replicas: 4
+    
+  service3gen:
+    image: service3gen:latest
+    ports:
+    - target: 5003
+      published: 5003
+      protocol: tcp
     deploy:
-      mode: replicated
-      replicas: 3
-      update_config:
-        parallelism: 1
-        order: start-first
-    container_name: service20letters
-    build: ./letter
-  backend:
-    image: service3gen:build-${BUILD_NUMBER}
+     replicas: 4
+
+  service4front:
+    image: service4front:latest
+    ports:
+    - target: 5004
+      published: 5004
+      protocol: tcp
     deploy:
-      mode: replicated
-      replicas: 3
-      update_config:
-        parallelism: 1
-        order: start-first
-    container_name: service30gen
-    build: ./backend
+     replicas: 4
     environment:
-    - DATABASE_URI=mysql+pymysql://root:mypassword@mysqldb/proj2db 
     - SECRET_KEY=secretkey
 
   mysqldb:
@@ -59,3 +63,5 @@ services:
 
 volumes:
   flasksql:
+
+
