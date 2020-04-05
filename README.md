@@ -1,1 +1,3 @@
-# project2
+# QA Project 2
+
+Introduction 
