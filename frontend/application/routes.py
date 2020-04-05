@@ -9,7 +9,7 @@ import requests
 @app.route('/generate', methods=['GET', 'POST'])
 @login_required
 def generate():
-   form = GenerateForm()
+    form = GenerateForm()
     result = requests.get("http://service3gen:5003").json()
     
     if not result.get('Error'):
