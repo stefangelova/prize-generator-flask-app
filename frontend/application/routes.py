@@ -1,13 +1,22 @@
-from flask import render_template
-from application import app
+from flask import render_template, request, redirect, url_for
+from application import app, db
+from flask_wtf import FlaskForm
+from wtforms import SubmitField
 from application.forms import GenerateForm
+from .models import Prize
+import requests
 
 @app.route('/generate', methods=['GET', 'POST'])
 @login_required
 def generate():
-    form=GenerateForm()
-    if form.submit.data:
-        res = requests.get("http://service3gen:5003").json()["prize"]
-        db.session.add(postData)
+   form = GenerateForm()
+    result = requests.get("http://service3gen:5003").json()
+    
+    if not result.get('Error'):
+        prize = Prize(prize=result.get('Prize'))
+
+        db.session.add(prize)
         db.session.commit()
-    return render_template ('generate.html', title='Generate Prize', form=form)
+    else:
+        result = "ERROR"
+    return render_template ('generate.html', form=form, result=result)

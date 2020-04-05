@@ -30,3 +30,32 @@ services:
         order: start-first
     container_name: service30gen
     build: ./backend
+    environment:
+    - DATABASE_URI=mysql+pymysql://root:mypassword@mysqldb/proj2db 
+    - SECRET_KEY=secretkey
+
+  mysqldb:
+    image: mysqldb:latest   
+    ports:
+    - target: 3306
+      published: 3306
+    volumes:
+    - flasksql:/var/lib/mysql   
+    environment: 
+    - MYSQL_ROOT_PASSWORD=mypassword
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - target: 80
+        published: 80
+    depends_on:
+      - service4front
+    volumes:
+      - type: bind
+        source: ./nginx/nginx.conf
+        target: /etc/nginx/nginx.conf
+
+volumes:
+  flasksql:
