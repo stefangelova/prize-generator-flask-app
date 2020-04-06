@@ -40,7 +40,7 @@ Due to unforseen technical circumstances, the progress of the project was hinder
  
 ## Sprints
 
-I planned to conduct 3 sprints which I planned through Trello. 
+I planned to conduct 3 sprints which I planned through [Trello](https://trello.com/b/IhLz0K3P/qa2). 
  + In the first sprint I created the random generator services and the backend service as well as deployed them with docker compose in order to test them.
  + In the second sprint I finished creating all services and worked on deploying them with docker compose and docker swarm.
  + In the third sprint, there was much less development as my work on Jenkins, Ansibe and the testing was largely unsuccessful.
