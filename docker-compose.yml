@@ -51,10 +51,9 @@ services:
 
   nginx:
     image: stef260695/nginx:latest
-    container_name: nginx
     ports:
-      - target: 80
-        published: 80
+    - target: 80
+      published: 80
     depends_on:
       - service4front
     volumes:
