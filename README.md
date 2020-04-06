@@ -5,7 +5,7 @@
  For this project I have created a web application using Python and Flask, with four distinct services, one generating random numbers
  and another random letters. Those two services get requested into the backend service and generate a prize from a set prize list.
  That output gets requested and displayed by the frontend and saved into the database. In addition there are two more services a mysql
- database and nginx.
+ database where the generated values get saved and nginx which acts as a load balancer.
 
 ## Risk Assesment 
 
@@ -29,6 +29,11 @@
  + Azure
  + Pytest
  
+## Service Structure
+
+![ServStruct](https://github.com/stefangelova/project2/blob/master/documentation/Untitled%20Diagram%20(3).jpg)
+
+
 ## Encountered Issues 
 
 Due to unforseen technical circumstances, the progress of the project was hindered, in addition to my lack of familiarity with the technologies I was woeking with.
