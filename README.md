@@ -25,6 +25,8 @@
  + Jenkins
  + Ansible
  + NGINX
+ + Azure
+ + Pytest
  
 ## Future Improvements 
 
