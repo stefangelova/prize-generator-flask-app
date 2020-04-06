@@ -2,9 +2,9 @@
 
 ## Introduction 
  
- For this project I have created a web application using Python and Flask, with two distinct services, one generating random numbers and
- the other random letters. Those two services get requested into the backend service and generate a prize from a set prize list. That
- output gets requested and displayed by the frontend and saved into the database.
+ For this project I have created a web application using Python and Flask, with four distinct services, one generating random numbers
+ and another random letters. Those two services get requested into the backend service and generate a prize from a set prize list.
+ That output gets requested and displayed by the frontend and saved into the database.
 
 ## Risk Assesment 
 
