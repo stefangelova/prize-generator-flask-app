@@ -28,9 +28,15 @@
  + Azure
  + Pytest
  
+## Encountered Issues 
+
+Due to unforseen technical circumstances, the progress of the project was hindered, in addition to my lack of familiarity with the technologies I was woeking with.
+ 
 ## Future Improvements 
 
-I would like to complete the tasks from the backlog which I could not as well as improve the UI.
+I would like to complete the tasks from the backlog which I could not as well as improve the UI. In addition I would like to improve my skills in Ansible and Jenkins.
+
+
  
  -----------------------------------------------------------------------------
 The application can be accessed by clicking [here](http://51.104.16.150)
