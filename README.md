@@ -36,7 +36,15 @@
 
 ## Encountered Issues 
 
-Due to unforseen technical circumstances, the progress of the project was hindered, in addition to my lack of familiarity with the technologies I was woeking with.
+Due to unforseen technical circumstances, the progress of the project was hindered, in addition to my lack of familiarity with the technologies I was working with.
+ 
+##Sprints
+
+I planned to conduct 3 sprints which I planned through Trello. 
+ + In the first sprint I created the random generator services and the backend service as well as deployed them with docker compose in order to test them.
+ + In the second sprint I finished creating all services and worked on deploying them with docker compose and docker swarm.
+ + In the third sprint, there was much less development as my work on Jenkins, Ansibe and the testing was largely unsuccessful.
+ 
  
 ## Future Improvements 
 
