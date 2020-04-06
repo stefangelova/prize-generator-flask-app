@@ -1,7 +1,7 @@
 version: '3.7'
 services:
   service1numbers: 
-    image: service1numbers:latest
+    image: stef260695/service1numbers:latest
     ports:
     - target: 5002
       published: 5002
@@ -10,7 +10,7 @@ services:
      replicas: 4
    
   service2letters:
-    image: service2letters:latest
+    image: stef260695/service2letters:latest
     ports:
     - target: 5001
       published: 5001
@@ -19,7 +19,7 @@ services:
      replicas: 4
     
   service3gen:
-    image: service3gen:latest
+    image: stef260695/service3gen:latest
     ports:
     - target: 5003
       published: 5003
@@ -28,7 +28,7 @@ services:
      replicas: 4
 
   service4front:
-    image: service4front:latest
+    image: stef260695/service4front:latest
     ports:
     - target: 5004
       published: 5004
@@ -40,7 +40,7 @@ services:
     - SECRET_KEY=secretkey
 
   mysqldb:
-    image: mysqldb:latest   
+    image: stef260695/mysqldb:latest   
     ports:
     - target: 3306
       published: 3306
@@ -50,7 +50,7 @@ services:
     - MYSQL_ROOT_PASSWORD=mypassword
 
   nginx:
-    image: nginx:latest
+    image: stef260695/nginx:latest
     container_name: nginx
     ports:
       - target: 80
