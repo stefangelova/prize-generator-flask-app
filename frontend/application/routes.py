@@ -6,8 +6,7 @@ from application.forms import GenerateForm
 from .models import Prize
 import requests
 
-@app.route('/generate', methods=['GET', 'POST'])
-@login_required
+@app.route('/', methods=['GET', 'POST'])
 def generate():
     form = GenerateForm()
     result = requests.get("http://service3gen:5003").json()
