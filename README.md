@@ -38,7 +38,7 @@
 
 Due to unforseen technical circumstances, the progress of the project was hindered, in addition to my lack of familiarity with the technologies I was working with.
  
-##Sprints
+## Sprints
 
 I planned to conduct 3 sprints which I planned through Trello. 
  + In the first sprint I created the random generator services and the backend service as well as deployed them with docker compose in order to test them.
